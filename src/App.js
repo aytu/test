@@ -9,7 +9,7 @@ function App() {
     console.log("effect is clean up")
    }
  }, [count])
- console.log(count);
+
  const incrementCount=()=>{
     setCount(prevCount=>prevCount+1);
     console.log(count);
