@@ -4,14 +4,13 @@ import RegionProvider from './themeProvider';
 import {BrowserRouter, Switch, Route,Redirect} from 'react-router-dom'
 import RegionList from './components/regions/regionList';
 import RegionDetails from './components/regions/regionDetails';
-const countfn =()=>{
-  console.log("useState fn");
-  return 0;
-}
+import Main from './components/contextTest/main';
+import Reducertest from './components/reducerTest/reducertest';
+
 function App() {
 
   return (
-    <div className="App">
+    <div className="container App">
       <BrowserRouter>
        <Switch>     
         <RegionProvider>
@@ -20,6 +19,12 @@ function App() {
         </Route>
         <Route path="/details/:iso" exact>
                 <RegionDetails/>
+        </Route>
+        <Route path="/main" exact>
+                <Main/>
+        </Route>
+        <Route path="/test" exact>
+                <Reducertest/>
         </Route>
         </RegionProvider>
         </Switch>

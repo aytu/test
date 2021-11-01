@@ -5,21 +5,22 @@ import RegionProvider from "../../themeProvider";
 import { Link } from "react-router-dom";
 
 export default function RegionList () {
-    const [regions, setRegions]=useState(Regions.data);
-    const [isClicked, setisClicked]=useState(false);
+    const [regions, setRegions]=useState([]);
+    //const [isClicked, setisClicked]=useState(false);
    
-    useEffect(() => {        
-        
-        // axios.get('https://covid-api.com/api/regions?per_page=20').then(response=>{
-    
-        //  })
+    useEffect(() => {  
+        console.log("effect is worked");
+        axios.get('https://covid-api.com/api/regions?per_page=20')
+        .then(response=>response.data)
+        .then(obj=>obj.data)
+        .then(regions=>setRegions(regions));
     }, [])
 
     return(
     <>
     <h2>Regions</h2>
         <table className="table">
-            <thead>
+            <thead className="thead-dark">
                 <tr>
                     <td>ISO</td>
                     <td>NAME</td>

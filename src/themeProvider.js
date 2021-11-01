@@ -1,6 +1,5 @@
 import React from "react"
 import responsedata from "./components/regions/responsedata";
- 
 
 
 const RegionContext=React.createContext();
